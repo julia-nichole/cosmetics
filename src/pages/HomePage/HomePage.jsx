@@ -1,20 +1,14 @@
-import React from "react";
-// import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
-import MainList from "../MainList";
-import AddMain from "../AddMain";
-import { MainProvider } from "../MainContext";
+import React, { Component } from 'react';
+import NavBar from '../../components/NavBar/NavBar';
 
-const HomePage = props => {
-  return (
-    <MainProvider>
-      <div className="HomePage">
-        <NavBar user={props.user} handlelogout={props.handlelogout} />
-        <MainList />
-        <AddMain />
-      </div>
-    </MainProvider>
-  );
-};
+class HomePage extends Component {
+    render(props) {
+        return (
+            <div>
+                <NavBar user={this.props.user} handleLogout={this.props.handleLogout}/>
+            </div>
+        )
+    }
+}
 
 export default HomePage;

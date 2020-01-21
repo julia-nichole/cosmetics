@@ -6,59 +6,50 @@ import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 
 import "./App.css";
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      // Initialize user if there's a token, otherwise null
       user: userService.getUser()
     };
   }
-  handlelogout = () => {
+
+
+  handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
-  };
+  }
 
-  handleSignuporLogin = () => {
-    this.setState({ user: userService.getUser() });
-  };
+  handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
+
   render() {
     return (
-      <div>
+      <div >
+        <header className='header-footer'> </header>
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <HomePage
-                user={this.state.user}
-                handlelogout={this.handlelogout}
-              />
-            )}
+          <Route exact path="/" render={(props) =>
+            <HomePage user={this.state.user} handleLogout={this.handleLogout} />
+          }
           />
-          <Route
-            exact
-            path="/signup"
-            render={({ history }) => (
-              <SignupPage
-                history={history}
-                handleSignuporLogin={this.handleSignuporLogin}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/login"
-            render={({ history }) => (
-              <LoginPage
-                history={history}
-                handleSignuporLogin={this.handleSignuporLogin}
-              />
-            )}
+          <Route exact path="/login" render={({ history }) =>
+            <LoginPage 
+            history={history}
+            handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+          <Route exact path="/signup" render={({ history }) =>
+            <SignupPage 
+            history={history}
+            handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }
           />
         </Switch>
       </div>
-    );
+    )
   }
 }
 

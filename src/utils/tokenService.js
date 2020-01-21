@@ -1,3 +1,4 @@
+
 function setToken(token) {
     if (token) {
         localStorage.setItem('token', token);
