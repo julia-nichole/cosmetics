@@ -5,10 +5,11 @@ const logger = require("morgan");
 
 const app = express();
 
-require('dotenv').config();
-require('./config/database');
+require("dotenv").config();
+require("./config/database");
 
-//middleware
+var mainsRouter = require("./routes/api/mains");
+
 app.use(logger("dev"));
 app.use(express.json());
 
@@ -16,16 +17,15 @@ app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));
 
 // Put API routes here, before the "catch all" route
-app.use('/api/users', require('./routes/api/users'));
+app.use("/api/users", require("./routes/api/users"));
 
+app.use("/api/mains", mainsRouter);
 
-// 'catch all' route
 app.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-// configure to port 3001
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 app.listen(port, function() {
   console.log(`Express app running on port ${port}`);
