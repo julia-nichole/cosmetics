@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
-import NavBar from '../../components/NavBar/NavBar';
+
+import { Box } from "grommet";
+
 
 class HomePage extends Component {
+    state = {
+    };
+  
     render(props) {
-        return (
-            <div>
-                <NavBar user={this.props.user} handleLogout={this.props.handleLogout}/>
-            </div>
-        )
-    }
-}
+  
+      return (
+       
+        
+        
+        <Box flex align="center" justify="center">
+        
+  
 
-export default HomePage;
+        <h1>ITEMS FOR SALE </h1>
+        </Box>
+      );
+    }
+  }
+  export default HomePage;

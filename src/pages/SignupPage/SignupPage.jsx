@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SignupForm from '../../components/SignupForm/SignupForm'
-
+import { Box, Form } from "grommet";
 
 class SignupPage extends Component {
   constructor(props) {
@@ -14,10 +14,14 @@ class SignupPage extends Component {
 
   render() {
     return (
-      <div className='SignupPage'>
-        <SignupForm {...this.props} updateMessage={this.updateMessage} />
-        <p>{this.state.message}</p>
-      </div>
+      <Box flex align="center" >
+          <Form>
+        <div className="SignupPage">
+          <SignupForm {...this.props} updateMessage={this.updateMessage} />
+          <p>{this.state.message}</p>
+        </div>
+        </Form>
+      </Box>
     );
   }
 }
