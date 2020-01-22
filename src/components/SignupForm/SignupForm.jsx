@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
-import { grommet, Box, FormField, Form, TextArea, Grommet } from "grommet";
+import {
+    Box,
+    Button,
+    CheckBox,
+    Collapsible,
+    Grommet,
+    Heading,
+    Form,
+    FormField,
+    RadioButtonGroup,
+    RangeInput,
+    Select,
+    Text,
+    TextArea,
+    Header,
+  } from "grommet";
 
 
 class SignupForm extends Component {
@@ -42,39 +57,64 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <Box flex justify="center">
-        <header className="header-footer">Sign Up</header>
-        <Form className="form-horizontal" onSubmit={this.handleSubmit} >
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="password" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="password" className="form-control" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
-            </div>
-          </div>
-        </Form>
-      </Box>
-    );
-  }
-}
+            <Box fill align="center" justify="center">
+            <Heading level={2} size="large">Sign Up</Heading>
+            <Box width="large" pad="medium">
+              <Form
+                onReset={event => console.log(event)}
+                onSubmit={this.handleSubmit}
+              >
+                <FormField
+                  label="Full name:"
+                  name="name"
+                  value={this.state.name}
+                  required
+                  onChange={this.handleChange}
+                  validate={{ regexp: /^[a-z]/i }}
+                />
+                <FormField
+                  label="Email:"
+                  name="email"
+                  required
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  validate={{ regexp: /^[a-z]/i }}
+                />
+      
+                <FormField
+                  label="Password:"
+                  name="password"
+                  type="password"
+                  required
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  validate={{ regexp: /^[a-zA-Z0-9]{5,}$/, message: "password should be 5 charecters or longer" }}
+                />
+                <FormField
+                  label="Confirm Password:"
+                  name="passwordConf"
+                  type="password"
+                  required
+                  value={this.state.passwordConf}
+                  onChange={this.handleChange}
+                  validate={{ regexp: /^[a-zA-Z0-9]{5,}$/, message: "password should be 5 charecters or longer" }}
+                />
+               
+                <Box direction="row" justify="between" pad="medium">
+                  <Button label="Cancel" href="/" />
+                  <Button  type="submit" label="Sign Up" primary  disabled={this.isFormInvalid()}/>
+                </Box>
+              </Form>
+            </Box>
+          </Box>
+      
+      
+      
+      
+            
+          );
+        }
+      }
+      
 
 export default SignupForm;

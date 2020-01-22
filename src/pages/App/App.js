@@ -18,7 +18,6 @@ import {
  } from 'grommet';
 import "./App.css";
 
-  
 class App extends Component {
   state = {
     showSidebar: false,

@@ -23,7 +23,7 @@
           "dark": "accent-1",
           "light": "brand"
         },
-        "focus": "#ffffff",
+        "focus": "#6C8AC9",
         "placeholder": "#BD7E8F",
         "selected": "#FDBBB5",
         "text": {
