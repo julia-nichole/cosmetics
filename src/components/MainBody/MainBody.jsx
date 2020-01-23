@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{Component} from "react";
 import { Box, Button, Heading, Grommet } from "grommet";
 
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
@@ -11,7 +11,10 @@ import CatListPage from '../../pages/CatListPage/CatListPage';
 import AddCatPage from '../../pages/AddCatPage/AddCatPage';
 import EditCatPage from '../../pages/EditCatPage/EditCatPage';
 
-function MainBody(props) {
+class  MainBody extends Component {
+  render(){
+
+ 
   return (
     <BrowserRouter>
       <Switch>
@@ -25,7 +28,7 @@ function MainBody(props) {
             :
             <LoginPage 
             history={history} 
-            handleSignupOrLogin={props.handleSignupOrLogin} />
+            handleSignupOrLogin={this.props.handleSignupOrLogin} />
           )}
         />
         <Route
@@ -37,14 +40,21 @@ function MainBody(props) {
             :
             <SignupPage
               history={history}
-              handleSignupOrLogin={props.handleSignupOrLogin}
+              handleSignupOrLogin={this.props.handleSignupOrLogin}
             />
           )}
         />
-
-        
-              
-            }
+<Route
+            exact
+            path="/add"
+            render= {({ history }) => (
+              <AddCatPage
+              history={history}
+              user={this.props.user}
+              handleLogout={this.props.handleLogout}
+              handleAddCat={this.props.handleAddCat}  
+              />
+            )}
           />
         <Box flex align="center" justify="center">
           app body
@@ -53,5 +63,5 @@ function MainBody(props) {
     </BrowserRouter>
   );
 }
-
+}
 export default MainBody;

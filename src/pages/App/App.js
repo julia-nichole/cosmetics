@@ -97,7 +97,10 @@ class App extends Component {
                 />
                 <MainBody 
                   user={this.state.user}
-                handleSignupOrLogin={this.handleSignupOrLogin} />
+                handleSignupOrLogin={this.handleSignupOrLogin}
+                handleAddCat={this.handleAddCat}
+                props={this.props}
+                cats={this.state.cats} />
               </Box>
             </Box>
           )}
