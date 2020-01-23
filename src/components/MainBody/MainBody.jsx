@@ -86,11 +86,12 @@ class  MainBody extends Component {
               <EditCatPage
               handleUpdateCat={this.props.handleUpdateCat}
               location={location}
+
               />
             )}
           />
         <Box flex align="center" justify="center">
-          app body
+          
         </Box>
       </Switch>
     // </BrowserRouter>

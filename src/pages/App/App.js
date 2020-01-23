@@ -100,6 +100,8 @@ class App extends Component {
                   history={this.props.history}
                 handleSignupOrLogin={this.handleSignupOrLogin}
                 handleAddCat={this.handleAddCat}
+                handleDeleteCat={this.props.handleDeleteCat}
+                handleUpdateCat={this.props.handleUpdateCat}
                 props={this.props}
                 cats={this.state.cats} />
               </Box>
