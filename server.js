@@ -8,9 +8,11 @@ const app = express();
 require('dotenv').config();
 require('./config/database');
 
+var catsRouter = require('./routes/cats');
 app.use(logger('dev'));
 app.use(express.json());
 
+app.use('/api/cats', catsRouter);
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 

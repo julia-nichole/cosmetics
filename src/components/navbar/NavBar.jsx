@@ -12,12 +12,15 @@ import { Notification } from "grommet-icons";
 
 
 const items = [
-  { label: "CART", href: "/" },
+  { label: "Home", href: "/" },
   { label: "LOG IN ", href: "/login" },
   { label: "SIGN UP", href: "/signup" },
+ 
 ];
 const itemsUser = [
-  { label: "Home", href: "/" },
+  {label: "Cat list", href: "/" },
+  { label:'add cat', href:"/add" },
+  { label:' edit cat', href:"/edit" }
 ];
 
 
