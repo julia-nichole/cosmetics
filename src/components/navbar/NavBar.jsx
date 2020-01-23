@@ -18,7 +18,7 @@ const items = [
  
 ];
 const itemsUser = [
-  {label: "Cat list", href: "/" },
+  {label: "Cat list", href: "/catlist" },
   { label:'add cat', href:"/add" },
   { label:' edit cat', href:"/edit" }
 ];

@@ -6,7 +6,7 @@ function CatListPage(props) {
   return (
     <>
       <h1>Cat List</h1>
-      <div className='CatListPage-grid'>
+      
         {props.cats.map(cat =>
           <CatCard
             key={cat._id}
@@ -14,7 +14,7 @@ function CatListPage(props) {
             handleDeleteCat={props.handleDeleteCat}
           />
         )}
-      </div>
+     
     </>
   );
 }

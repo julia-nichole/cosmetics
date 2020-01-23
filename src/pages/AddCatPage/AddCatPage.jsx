@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import * as catAPI from '../../utils/cats-api';
+
 class AddCatPage extends Component {
   state = {
     invalidForm: true,
@@ -41,7 +41,7 @@ class AddCatPage extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Pup's Breed (required)</label>
+            <label> Breed (required)</label>
             <input
               className="form-control"
               name="breed"
@@ -51,7 +51,7 @@ class AddCatPage extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Pup's Age</label>
+            <label> Age</label>
             <input
               className="form-control"
               name="age"

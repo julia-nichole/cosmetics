@@ -97,6 +97,7 @@ class App extends Component {
                 />
                 <MainBody 
                   user={this.state.user}
+                  history={this.props.history}
                 handleSignupOrLogin={this.handleSignupOrLogin}
                 handleAddCat={this.handleAddCat}
                 props={this.props}

@@ -27,7 +27,7 @@ function CatCard({cat, handleDeleteCat}) {
           EDIT
         </Link>
         <button
-          className='btn btn-xs btn-danger margin-left-10'
+          
           onClick={() => handleDeleteCat(cat._id)}
         >
           DELETE

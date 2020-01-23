@@ -12,13 +12,19 @@ import AddCatPage from '../../pages/AddCatPage/AddCatPage';
 import EditCatPage from '../../pages/EditCatPage/EditCatPage';
 
 class  MainBody extends Component {
+
+  async componentDidMount() {
+    const cats = await catAPI.getAll();
+    console.log(cats)
+    this.setState({cats});
+  }
   render(){
 
  
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <Switch>
-        <Route exact path="/" render={() => <HomePage />} />
+        <Route exact path="/" render={({history}) => <HomePage history={history}   />} />
         <Route
           exact
           path="/login"
@@ -56,11 +62,38 @@ class  MainBody extends Component {
               />
             )}
           />
+
+<Route
+            exact
+            path="/catlist"
+            render= {({ history }) => (
+              <CatListPage
+              history={history}
+              handleLogout={this.props.handleLogout}
+              user={this.props.user}
+              handleDeleteCat={this.props.handleDeleteCat}
+              handleUpdateCat={this.props.handleUpdateCat}
+              cats={this.props.cats}
+              props={this.props}
+              />
+            )}
+          />
+
+<Route
+            exact
+            path="/edit"
+            render= {({ location}) => (
+              <EditCatPage
+              handleUpdateCat={this.props.handleUpdateCat}
+              location={location}
+              />
+            )}
+          />
         <Box flex align="center" justify="center">
           app body
         </Box>
       </Switch>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 }
