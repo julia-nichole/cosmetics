@@ -1,7 +1,7 @@
 import React ,{Component} from "react";
 import { Box, Button, Heading, Grommet } from "grommet";
 
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import HomePage from "../../pages/HomePage/HomePage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";

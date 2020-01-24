@@ -63,7 +63,7 @@ class EditCatPage extends Component {
           >
             SAVE PUPPY
           </button>&nbsp;&nbsp;
-          <Link to='/'>CANCEL</Link>
+          <Link to='/catlist'>CANCEL</Link>
         </form>
       </>
     );

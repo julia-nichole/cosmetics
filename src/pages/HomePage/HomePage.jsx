@@ -15,7 +15,7 @@ class HomePage extends Component {
         <Box flex align="center" justify="center">
         
          
-        <h1>ITEMS FOR SALE </h1>
+        <h1> CATS </h1>
         </Box>
       );
     }

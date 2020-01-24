@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
-
-function CatCard({cat, handleDeleteCat}) { 
+import {Grommet, Box, Button, Text,} from 'grommet';
+function CatCard(props) { 
+    // console.log(props)
+    let cat = props.cat
   return (
     <div className='panel panel-default'>
       <div className="panel-heading">
-        <h3 className='panel-title'>{cat.name}</h3>
+        <h3 className='panel-title'>{props.cat.name}</h3>
       </div>
       <div className='panel-body'>
         <dl>
           <dt>Breed</dt>
-          <dd>{cat.breed}</dd>
+          <dd>{props.cat.breed}</dd>
           <dt>Age</dt>
-          <dd>{cat.age}</dd>
+          <dd>{props.cat.age}</dd>
         </dl>
       </div>
-      <div className='panel-footer'>
+     
         
         <Link
           className='btn btn-xs btn-warning'
@@ -28,12 +30,12 @@ function CatCard({cat, handleDeleteCat}) {
         </Link>
         <button
           
-          onClick={() => handleDeleteCat(cat._id)}
+          onClick={() => props.handleDeleteCat(props.cat._id)}
         >
           DELETE
         </button>
       </div>
-    </div>
+
   );
 }
 
