@@ -1,13 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Grommet, Box, Button, Text,} from 'grommet';
+import {Grommet, Box, Button, Text, Heading} from 'grommet';
 function CatCard(props) { 
     // console.log(props)
     let cat = props.cat
   return (
     <div className='panel panel-default'>
       <div className="panel-heading">
+          <Heading>
         <h3 className='panel-title'>{props.cat.name}</h3>
+        </Heading>
       </div>
       <div className='panel-body'>
         <dl>

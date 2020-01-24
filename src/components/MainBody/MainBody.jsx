@@ -18,6 +18,11 @@ class  MainBody extends Component {
     console.log(cats)
     this.setState({cats});
   }
+
+
+
+
+  
   render(){
 
  

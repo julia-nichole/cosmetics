@@ -1,5 +1,20 @@
 import React, {Component} from 'react';
-
+import {
+    Box,
+    Button,
+    CheckBox,
+    Collapsible,
+    Grommet,
+    Heading,
+    Form,
+    FormField,
+    RadioButtonGroup,
+    RangeInput,
+    Select,
+    Text,
+    TextArea,
+    Header,
+  } from "grommet"; 
 class AddCatPage extends Component {
   state = {
     invalidForm: true,
@@ -29,8 +44,9 @@ class AddCatPage extends Component {
     return (
       <>
         <h1>Add Cat</h1>
-        <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
+        <Form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div className="form-group">
+              <FormField>
             <label> Name (required)</label>
             <input
               className="form-control"
@@ -39,8 +55,10 @@ class AddCatPage extends Component {
               onChange={this.handleChange}
               required
             />
+            </FormField>
           </div>
           <div className="form-group">
+          <FormField>
             <label> Breed (required)</label>
             <input
               className="form-control"
@@ -49,8 +67,10 @@ class AddCatPage extends Component {
               onChange={this.handleChange}
               required
             />
+            </FormField>
           </div>
           <div className="form-group">
+          <FormField>
             <label> Age</label>
             <input
               className="form-control"
@@ -58,6 +78,7 @@ class AddCatPage extends Component {
               value={this.state.formData.age}
               onChange={this.handleChange}
             />
+              </FormField>
           </div>
           <button
             type="submit"
@@ -66,7 +87,7 @@ class AddCatPage extends Component {
           >
             ADD Cat
           </button>
-        </form>
+        </Form>
       </>
     );
   }

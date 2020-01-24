@@ -7,7 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../SignupPage/SignupPage";
 import HomePage from "../HomePage/HomePage";
-import NavBar from '../../components/NavBar/NavBar'
+import NavBars from '../../components/NavBars/NavBars'
 import userService from "../../utils/userService";
 import MainBody from "../../components/MainBody/MainBody";
 import Sidebar from "../../components/SideBar/SideBar";
@@ -82,7 +82,7 @@ class App extends Component {
         <ResponsiveContext.Consumer>
           {size => (
             <Box fill>
-              <NavBar
+              <NavBars
                 user={this.state.user}
                 handleSideClick={this.handleSideClick}
                 handleLogout={this.handleLogout}
